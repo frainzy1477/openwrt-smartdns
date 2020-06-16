@@ -30,6 +30,7 @@ jobs:
         tar xJf openwrt-sdk-*.tar.xz -C ../
         mv -f "${GITHUB_WORKSPACE}" ../src
         mv ../openwrt-sdk-* "${GITHUB_WORKSPACE}"
+        git clone https://github.com/frainzy1477/smartdnss.git "${GITHUB_WORKSPACE}"/"$PKGN"
 
     - name: Install dependencies
       run: |
@@ -38,19 +39,6 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         
-    - name: Prepare targets
-      id: po2lmo
-      run: |
-        REP=$(basename "${REPF}")
-        mv -vf ../src "package/${REP}"
-        test -d "package/${REP}/tools/po2lmo"
-
-    - name: Prebuild po2lmo host tool
-      if: success()
-      run: |
-        REP=$(basename "${REPF}")
-        pushd "package/${REP}/tools/po2lmo"
-        make && sudo make install
 
     - name: Load custom configuration
       env:
