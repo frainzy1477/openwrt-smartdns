@@ -26,8 +26,9 @@ MAKE_VARS += VER=$(PKG_VERSION)
 MAKE_PATH:=src
 
 define Package/smartdns
-  SECTION:=net
-  CATEGORY:=Network
+  SECTION:=smartdns
+  CATEGORY:=LuCI
+  SUBMENU:=2. Smartdns
   TITLE:=smartdns server
   DEPENDS:=+libpthread +libopenssl
   URL:=https://github.com/frainzy1477/smartdns/
