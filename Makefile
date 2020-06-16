@@ -10,7 +10,7 @@ PKG_VERSION:=1.3.0
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/frainzy1477/smartdns.git
+PKG_SOURCE_URL:=https://github.com/frainzy1477/smartdnss.git
 PKG_SOURCE_VERSION:=0aec326d551925a269a960677f4cd432d8e89385
 # PKG_MIRROR_HASH:=d5affc45a533e38ee04f3ce47b441aecf316cb9cb68ff410eede67090ec0fcc7
 
@@ -31,7 +31,7 @@ define Package/smartdns
   SUBMENU:=2. Smartdns
   TITLE:=smartdns server
   DEPENDS:=+libpthread +libopenssl
-  URL:=https://github.com/frainzy1477/smartdns/
+  URL:=https://github.com/frainzy1477/smartdnss/
 endef
 
 define Package/smartdns/description
